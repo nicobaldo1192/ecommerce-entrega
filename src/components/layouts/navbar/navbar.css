@@ -1,0 +1,22 @@
+.title {
+  color: rgb(255, 166, 0);
+  width: 75px;
+  height: 75px;
+  top: 0;
+  left: 10;
+  padding: 10px;
+}
+.nav-ul {
+  width: 100%;
+  position: static;
+  top: 0px;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  align-items: center;
+}
+.nav {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+}

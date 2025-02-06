@@ -1,0 +1,20 @@
+.cart {
+    position: relative;
+}
+.cart-icono {
+    position: absolute;
+    margin: 5px;
+    padding: 10px;
+    width: 50px;
+    height: 50px;
+    left: 10px;
+    color: black;
+}
+.cart-bumbble {
+    width: 80px;
+    height: 60px;
+    display: flex;
+}
+.cart-number {
+    position: absolute;
+}

@@ -1,16 +1,32 @@
 import { CartWidget } from "../../common/cartWidget/CartWidget";
-import "./navbar.css";
+import { Link } from "react-router";
+import "./Navbar.css";
+
 export const Navbar = () => {
   return (
-    <nav className="nav-ul">
-      <h2 className="title">Gamer Word</h2>
-      <ul className="nav-ul">
-        <li>Consolas</li>
-        <li>Perifericos</li>
-        <li>componentes</li>
-        <li>notebooks</li>
+    <nav className="navbar">
+      <Link to="/" className="logo">
+        Gamer World
+      </Link>
+      <ul className="nav-links">
+        <Link to="/category/consolas" className="nav-item">
+          Consolas
+        </Link>
+        <Link to="/category/perifericos" className="nav-item">
+          Perifericos
+        </Link>
+        <Link to="/category/monitores" className="nav-item">
+          Monitores
+        </Link>
+        <Link to="/category/juegos" className="nav-item">
+          juegos
+        </Link>
       </ul>
-      <CartWidget />
+      <Link to="/cart" className="cart-link">
+        <div className="cart-hover">
+          <CartWidget />
+        </div>
+      </Link>
     </nav>
   );
 };

@@ -1,12 +1,9 @@
-import { IoMdCart } from "react-icons/io";
-import { SlBubble } from "react-icons/sl";
-import "./cartWidget.css";
+import { FaShoppingCart } from "react-icons/fa";
 export const CartWidget = () => {
-return (
-    <div className="cart">
-    <IoMdCart className="cart-icono" />
-    <SlBubble className="cart-bumbble"/>
-    <h3 className="cart-number">2</h3>
+  return (
+    <div>
+      <FaShoppingCart />
+      <h3>2</h3>
     </div>
-);
+  );
 };

@@ -1,17 +1,34 @@
-import { ProductCard } from "../../productCard/ProductCard";
+import { useEffect, useState } from "react";
+import { products } from "../../products";
+import { ProductCard } from "../../common/productCard/ProductCard";
+import { useParams } from "react-router";
 
-export const ItemListContainer = ({ greeting }) => {
-
-
-  
+export const ItemListContainer = () => {
+  const [items, setItems] = useState([]);
+  const { name } = useParams();
+  useEffect(() => {
+    const getProducts = new Promise((resolve, reject) => {
+      let isAdmin = true;
+      if (isAdmin) {
+        resolve(
+          name
+            ? products.filter((elemento) => elemento.category === name)
+            : products
+        );
+      } else {
+        reject({ message: "algo salio mal", status: 400 });
+      }
+    });
+    getProducts
+      .then((res) => setItems(res))
+      .catch((error) => console.log(error));
+  }, [name]);
   return (
     <section>
-      <h2>{greeting}</h2>
-
-      <h2>Mis productos</h2>
-      <ProductCard title="titulo 1" price="precio 1" />
-      <ProductCard title="titulo 2" price="precio 2" />
-      <ProductCard title="titulo 3" price="precio 3" />
+      <h2>Productos</h2>
+      {items.map((item) => {
+        return <ProductCard key={item.id} item={item} />;
+      })}
     </section>
   );
 };

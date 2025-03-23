@@ -1,5 +1,5 @@
 import { Navbar } from "./components/layouts/navbar/Navbar";
-import Cart from "./components/pages/cart/Cart";
+import Cart from "./components/pages/Cart/Cart";
 import Checkout from "./components/pages/Checkout/Checkout";
 import ItemDetail from "./components/pages/ItemDetail/ItemDetail";
 import { ItemListContainer } from "./components/pages/ItemListContainer/ItemListContainer";

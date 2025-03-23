@@ -1,4 +1,4 @@
-import { Navbar } from "./components/layouts/Navbar/Navbar";
+import { Navbar } from "./components/layouts/navbar/Navbar";
 import Cart from "./components/pages/Cart/Cart";
 import Checkout from "./components/pages/Checkout/Checkout";
 import ItemDetail from "./components/pages/ItemDetail/ItemDetail";

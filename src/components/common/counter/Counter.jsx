@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { CartContext } from "../../../context/CartContext";
+import "./counter.css";
 
 const Counter = ({ item }) => {
   const [contador, setContador] = useState(1);
@@ -9,9 +10,10 @@ const Counter = ({ item }) => {
     if (item.stock > contador) {
       setContador(contador + 1);
     } else {
-      alert("stock maximo");
+      alert("Stock máximo alcanzado");
     }
   };
+
   const restar = () => {
     if (contador > 1) {
       setContador(contador - 1);
@@ -24,8 +26,8 @@ const Counter = ({ item }) => {
   };
 
   return (
-    <div style={{ padding: "40px" }}>
-      <button onClick={restar}>restar</button>
+    <div className="counter-container">
+      <button onClick={restar}>Restar</button>
       <h2>{contador}</h2>
       <button onClick={sumar}>Sumar</button>
       <button onClick={onAdd}>Agregar al carrito</button>

@@ -9,11 +9,8 @@ const Checkout = () => {
     email: "",
     telefono: "",
   });
-
   const { cart, getTotalAmount, resetCart } = useContext(CartContext);
-
   const [orderId, setOrderId] = useState(null);
-
   const funcionFormulario = (evento) => {
     evento.preventDefault();
     let total = getTotalAmount();
@@ -23,26 +20,21 @@ const Checkout = () => {
       items: cart,
       total,
     };
-
     let promesaCompra = addDoc(ordersCollection, order);
     promesaCompra.then((res) => {
       setOrderId(res.id);
       resetCart();
     });
-
     let productsCollection = collection(db, "products");
-
     order.items.forEach((elemento) => {
       let refDoc = doc(productsCollection, elemento.id);
       updateDoc(refDoc, { stock: elemento.stock - elemento.quantity });
     });
   };
-
   const funcionInputs = (evento) => {
     const { value, name } = evento.target;
     setUserInfo({ ...userInfo, [name]: value });
   };
-
   return (
     <div>
       {orderId ? (
@@ -75,5 +67,4 @@ const Checkout = () => {
     </div>
   );
 };
-
 export default Checkout;

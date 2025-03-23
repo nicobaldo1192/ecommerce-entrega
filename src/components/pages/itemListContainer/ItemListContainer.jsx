@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { ProductCard } from "../../common/productCard/ProductCard";
 import { useParams } from "react-router";
 import { db } from "../../../firebaseConfig";
-import { collection, addDoc, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import "./itemListContainer.css";
 
 export const ItemListContainer = () => {
   const [items, setItems] = useState([]);
@@ -26,20 +27,14 @@ export const ItemListContainer = () => {
       .catch((error) => console.log(error));
   }, [name]);
 
-  // const cargar = () => {
-  //   let refCollection = collection(db, "products");
-  //   products.forEach((product) => {
-  //     addDoc(refCollection, product);
-  //   });
-  // };
-
   return (
     <section>
-      {/* <button onClick={cargar}>cargar productos</button> */}
       <h2>Mis productos</h2>
-      {items.map((item) => {
-        return <ProductCard key={item.id} item={item} />;
-      })}
+      <div className="products-container">
+        {items.map((item) => {
+          return <ProductCard key={item.id} item={item} />;
+        })}
+      </div>
     </section>
   );
 };

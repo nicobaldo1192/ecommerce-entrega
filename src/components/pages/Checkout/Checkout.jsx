@@ -63,7 +63,6 @@ const Checkout = () => {
           <button type="button">cancelar</button>
         </form>
       )}
-      {/* {orderId && <h2>tu numero de compra es {orderId}</h2>} */}
     </div>
   );
 };

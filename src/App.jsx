@@ -1,7 +1,7 @@
 import { Navbar } from "./components/layouts/navbar/Navbar";
 import Cart from "./components/pages/cart/Cart";
 import Checkout from "./components/pages/Checkout/Checkout";
-import ItemDetail from "./components/pages/itemDetail/ItemDetail";
+import ItemDetail from "./components/pages/ItemDetail/ItemDetail";
 import { ItemListContainer } from "./components/pages/ItemListContainer/ItemListContainer";
 
 import { BrowserRouter, Routes, Route } from "react-router";
